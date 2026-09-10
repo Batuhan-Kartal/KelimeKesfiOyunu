@@ -3,133 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Şartlar ve Koşullar - Kelime Keşfi Oyunu</title>
+    <title>Kullanım Koşulları - Kelime Bulma Oyunu : Gezgin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --bg: #f8fafd;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --accent: #d97706;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
         }
+
         .container {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border);
         }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 32px;
+            margin-bottom: 36px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-family: 'Outfit', sans-serif;
+        }
+
         h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            color: #111827;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
         h2 {
-            color: #34495e;
-            margin-top: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
         }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
         ul {
-            padding-left: 20px;
+            margin-bottom: 20px;
+            padding-left: 24px;
+            color: var(--text-muted);
         }
+
         li {
             margin-bottom: 8px;
         }
-        footer {
-            margin-top: 40px;
-            font-size: 0.85em;
-            color: #7f8c8d;
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #b45309;
+            font-weight: 500;
+        }
+
+        .contact-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .contact-card p {
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            border-top: 1px solid #ecf0f1;
-            padding-top: 20px;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 12px;
+            }
+            .container {
+                padding: 24px 18px;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Şartlar ve Koşullar</h1>
-        <p>Bu hüküm ve koşullar, AiakCore tarafından işletilen ilgili tüm hizmetlerle birlikte mobil cihazlar için <strong>Kelime Keşfi Oyunu</strong> uygulaması için geçerlidir (topluca "Uygulama"). AiakCore burada "Hizmet Sağlayıcı" olarak anılmaktadır.</p>
-        <p>Uygulamayı indirerek veya kullanarak bu Şartlar ve Koşulları kabul etmiş olursunuz. Uygulamayı kullanmadan önce bunları dikkatlice okumalısınız.</p>
 
-        <h2>Uygulamayı Kullanma Lisansı</h2>
-        <p>Bu Şartlara uymanız koşuluyla, Hizmet Sağlayıcı size Uygulamayı kişisel veya şirket içi iş amaçları için bir mobil cihaza yükleme ve kullanma konusunda sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans vermektedir. Uygulamayı, yürürlükteki yasa tarafından açıkça izin verilmediği sürece ve yalnızca bu kapsamda çoğaltamaz, dağıtamaz, değiştiremez, türev çalışmalar oluşturamaz, tersine mühendislik yapamaz, derleyemez veya parçalarına ayıramazsınız.</p>
-
-        <h2>Fikri Mülkiyet</h2>
-        <p>Hizmet Sağlayıcı, Uygulama üzerindeki tüm fikri mülkiyet haklarını, kodunu, tasarımını, ticari markalarını, hizmet markalarını, ticari adlarını, logolarını ve marka kimliğini ("Fikri Mülkiyet") saklı tutar. Bu Şartlarda yer alan hiçbir şey, size Hizmet Sağlayıcının ticari markalarını, logolarını veya marka kimliğini herhangi bir amaçla kullanma lisansı veya hakkı vermez. Uygulamada görüntülenen telif hakkı, ticari marka veya diğer tescilli bildirimleri kaldırmayacağınızı, değiştirmeyeceğinizi veya gizlemeyeceğinizi kabul edersiniz.</p>
-
-        <h2>Kullanım Şartları ve Yaş Sınırı</h2>
-        <p>Bu Uygulamaya erişerek ve kullanarak, bulunduğunuz yargı bölgesinde bunu yasal olarak kullanma izninizin olduğunu beyan edersiniz. Uygulamayı kullanmak için en az 18 yaşında (bulunduğunuz yargı bölgesindeki dijital rıza yaşı) olmalısınız. 18 yaşın altındaysanız, bir ebeveyn veya yasal vasi bu Şartları sizin adınıza incelemeli ve kabul etmelidir.</p>
-        <p>Uygulamanın, Uygulamanın herhangi bir parçasının veya Hizmet Sağlayıcının ticari markalarının yetkisiz kopyalanması veya değiştirilmesi kesinlikle yasaktır. Uygulamanın kaynak kodunu çıkarmaya, Uygulamayı başka dillere çevirmeye veya türev sürümler oluşturmaya yönelik her türlü girişim yasaktır. Uygulamayla ilgili tüm ticari markalar, telif hakları, veri tabanı hakları ve diğer fikri mülkiyet hakları Hizmet Sağlayıcının mülkiyetinde kalır.</p>
-
-        <h2>Kullanıcı Tarafından Oluşturulan İçerik ve Kabul Edilebilir Kullanım</h2>
-        <p>Bu Uygulama kullanıcıların içerik yayınlamasına, paylaşmasına veya yüklemesine izin veriyorsa, aşağıdaki türde içerik yayınlamayacağınızı kabul edersiniz:</p>
-        <ul>
-            <li>Yasadışıdır veya üçüncü şahısların fikri mülkiyet haklarını (telif hakkı, marka, patent) ihlal eder.</li>
-            <li>Hakaret içeren, tehdit edici, taciz edici, iftira niteliğinde veya nefret söylemi içerir.</li>
-            <li>Ayrımcılık veya şiddete ya da yasadışı faaliyete teşvik içerir.</li>
-            <li>Spam, kimlik avı veya kötü amaçlı yazılım içerir.</li>
-            <li>Başkalarının gizlilik veya kişisel veri haklarını ihlal eder.</li>
-            <li>Yanlış, yanıltıcı veya aldatıcıdır.</li>
-            <li>Açıkça şiddet veya cinsel içerik barındırmaktadır (uygun şekilde yaş sınırlaması getirilmediği sürece).</li>
-        </ul>
-        <p>Hizmet Sağlayıcı aşağıdaki hakları saklı tutar:</p>
-        <ul>
-            <li>Bu yönergeleri ihlal eden içeriğe erişimi kaldırmak veya devre dışı bırakmak.</li>
-            <li>Bu kuralları tekrar tekrar ihlal eden kullanıcıların hesaplarını askıya almak veya sonlandırmak.</li>
-            <li>Yasadışı içerik bildirildiğinde kolluk kuvvetleriyle işbirliği yapmak.</li>
-            <li>Bu Şartları, geçerli yasaları veya yukarıda belirtilen yönergeleri ihlal eden içerikleri denetlemek, filtrelemek veya gizlemek.</li>
-        </ul>
-        <p>İçeriğin bu Şartları ihlal ettiğine, haklarınızı çiğnediğine veya yasa dışı olduğuna inanıyorsanız, bunu Hizmet Sağlayıcısına <strong>veloragamespuzzle@gmail.com</strong> adresinden bildirebilirsiniz. Uygulama bu tür özellikler sunuyorsa, uygulama arayüzü üzerinden doğrudan içerik bildirebilir, diğer kullanıcıları engelleyebilir veya bildirimleri susturabilirsiniz.</p>
-        <p>Kullanıcı Tarafından Oluşturulan İçeriği göndererek, Hizmet Sağlayıcıya, Uygulama ve Hizmet Sağlayıcının işiyle bağlantılı olarak içeriği kullanma, çoğaltma, dağıtma, türev çalışmalar hazırlama, görüntüleme ve gerçekleştirme konusunda münhasır olmayan, dünya çapında, telifsiz bir lisans vermiş olursunuz. İçeriğinizle ilgili kişisel verilerin işlenmesi Gizlilik Politikası'na tabidir.</p>
-
-        <h2>Güvenlik, Root ve Jailbreak Uyarıları</h2>
-        <p>Uygulama, hizmeti sağlamak amacıyla Hizmet Sağlayıcıya verdiğiniz kişisel verileri saklar ve işler. Telefonunuzun ve Uygulamaya erişiminizin güvenliğini sağlamak sizin sorumluluğunuzdadır. Hizmet Sağlayıcı, telefonunuzun resmi işletim sisteminin getirdiği yazılım kısıtlamalarını ve sınırlamalarını kaldırmayı içeren jailbreak veya root işlemlerini kesinlikle önermez. Bu tür işlemler telefonunuzu kötü amaçlı yazılımlara, virüslere, zararlı programlara maruz bırakabilir, telefonunuzun güvenlik özelliklerini tehlikeye atabilir ve Uygulamanın doğru çalışmamasına veya hiç çalışmamasına neden olabilir.</p>
-        <p>Lütfen uygulamanın kendi hüküm ve koşullarına sahip üçüncü taraf hizmetlerini kullandığını unutmayın. Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcılarının hüküm ve koşullarına ait bağlantılar aşağıdadır:</p>
-        <ul>
-            <li>Google Play Hizmetleri</li>
-            <li>AdMob</li>
-            <li>Firebase için Google Analytics</li>
-            <li>Firebase Crashlytics</li>
-            <li>Unity</li>
-            <li>RevenueCat</li>
-        </ul>
-
-        <h2>Sorumluluk ve İnternet Kullanımı</h2>
-        <p>Uygulamanın bazı işlevleri, Wi-Fi veya mobil ağ sağlayıcınız tarafından sağlanan aktif bir internet bağlantısı gerektirir. Wi-Fi erişiminin olmaması veya veri kotanızın tükenmesi nedeniyle Uygulamanın tam kapasitede çalışmaması durumunda Hizmet Sağlayıcı sorumlu tutulamaz. Bağlantı sırasında veri kullanımı için mobil sağlayıcınızdan veya diğer üçüncü taraflardan (roaming/dolaşım ücretleri dahil) ücretlendirmeler alabilirsiniz ve bu ücretlerden siz sorumlusunuz.</p>
-        <p>Cihazınızın şarjının dolu olduğundan emin olmak sizin sorumluluğunuzdadır. Cihazınızın pili biterse ve Hizmete erişemezseniz, Hizmet Sağlayıcı sorumlu tutulamaz.</p>
-
-        <h2>Sorumluluğin Sınırlandırılması ve Tazminat</h2>
-        <p>Yasaların izin verdiği en geniş ölçüde, Hizmet Sağlayıcı, kar kaybı, veri kaybı veya iş kesintisi de dahil olmak üzere, dolaylı, arızi, özel, sonuçsal veya cezai zararlardan sorumlu tutulamaz. Hizmet Sağlayıcının toplam sorumluluğu, talebin gerçekleştiği tarihten önceki 12 ay içinde Uygulama için ödediğiniz tutarı veya yasal minimum tutarı aşamaz.</p>
-        <p>Bu Şartları ihlal etmenizden veya Uygulamayı kasıtlı olarak kötüye kullanmanızdan kaynaklanan her türlü iddia, yükümlülük, zarar, kayıp ve masraftan Hizmet Sağlayıcıyı tazmin etmeyi kabul edersiniz.</p>
-
-        <h2>Yapay Zeka ve Güncellemeler</h2>
-        <p>Uygulama, belirli özellikler veya hizmetler sağlamak için Yapay Zeka (YZ) teknolojilerini içermektedir. Uygulamayı kullanarak, YZ'nin verileri işlemek ve işlevsellikler sunmak için kullanılabileceğini kabul ve onaylamış olursunuz.</p>
-        <p>Uygulamayı kullanmaya devam etmek istiyorsanız gelecekte sunulacak güncellemeleri indirmeniz gerekecektir. Hizmet Sağlayıcı uygulamayı sağlamayı bırakmak isteyebilir ve size herhangi bir zamanda fesih bildirimi vermeden kullanımını sonlandırabilir.</p>
-
-        <h2>Fesih</h2>
-        <p>Hizmet Sağlayıcı, bu Şartları esaslı bir şekilde ihlal etmeniz durumunda Uygulamaya veya hizmetlere erişiminizi askıya alabilir. Sözleşmenin feshedilmesiyle birlikte, Uygulamayı kullanma hakkınız sona erecek ve cihazlarınızdaki tüm kopyaları silmeniz gerekecektir.</p>
-
-        <h2>DSA Uyumluluğu (Dijital Hizmetler Yasası)</h2>
-        <p>Uygulama, Dijital Hizmetler Yasası (AB 2022/2065 Yönetmeliği, "DSA") kapsamında tanımlanan bir aracı hizmet ise, aşağıdaki hükümler geçerlidir:</p>
-        <ul>
-            <li><strong>İçerik Denetimi ve Gerekçe Bildirimi:</strong> İçeriğe erişim kısıtlandığında veya hesap askıya alındığında etkilenen kullanıcıya açık ve spesifik bir gerekçe bildirimi sunulacaktır.</li>
-            <li><strong>Bildirim ve İşlem:</strong> Kullanıcılar, yasa dışı olduğu iddia edilen içeriklere ilişkin bildirimlerde bulunabilirler. Bildirimler derhal ve özenle işleme koyulacaktır.</li>
-            <li><strong>Mahkeme Dışı Uyuşmazlık Çözümü:</strong> İçerik denetimi kararlarına ilişkin uyuşmazlıklar, DSA'nın 21. maddesine uygun olarak sertifikalandırılmış bir mahkeme dışı uyuşmazlık çözüm organına sunulabilir.</li>
-        </ul>
-
-        <h2>Uygulanacak Hukuk ve Diğer Hükümler</h2>
-        <p>Bu Hüküm ve Koşullar, zorunlu tüketici koruma yasalarının aksini öngördüğü durumlar hariç olmak üzere, Hizmet Sağlayıcının kurulduğu yargı bölgesinin kanunlarına tabidir. Bu Şartlar ve Koşulların herhangi bir hükmünün geçersiz olduğuna karar verilmesi halinde, geri kalan hükümler tam olarak yürürlükte kalacaktır.</p>
-
-        <h2>Değişiklikler</h2>
-        <p>Hizmet Sağlayıcı, Şartlar ve Koşullarını periyodik olarak güncelleyebilir. Bu nedenle, herhangi bir değişiklik için bu sayfayı düzenli olarak incelemeniz önerilir. Yeni Şartlar ve Koşullar bu sayfada yayınlanarak yürürlüğe girecektir.</p>
-
-        <h2>Bize Ulaşın</h2>
-        <p>Şartlar ve Koşullar hakkında herhangi bir sorunuz veya öneriniz varsa, lütfen <strong>veloragamespuzzle@gmail.com</strong> adresinden Hizmet Sağlayıcı ile iletişime geçmekten çekinmeyin.</p>
-
-        <footer>
-            Bu hüküm ve koşullar 02.07.2026 tarihinden itibaren geçerlidir.<br>
-            Şartlar ve Koşullar sayfası, Uygulama Gizlilik Politikası Oluşturucu tarafından oluşturulmuştur.
-        </footer>
+<div class="container">
+    <div class="header">
+        <span class="badge">AiakCore Kullanıcı Sözleşmesi</span>
+        <h1>Kullanım Koşulları ve Şartlar</h1>
+        <div class="subtitle"><strong>Kelime Bulma Oyunu : Gezgin</strong> Mobil Uygulaması</div>
+        <div class="last-updated">Son Güncelleme: 10 Eylül 2026</div>
     </div>
+
+    <p>
+        Bu Şartlar ve Koşullar ("Şartlar"), <strong>AiakCore</strong> ("Geliştirici", "biz", "bize") tarafından sunulan <strong>Kelime Bulma Oyunu : Gezgin</strong> mobil uygulamasının ("Uygulama") indirilmesi, yüklenmesi ve kullanımıyla ilgili kuralları belirler.
+    </p>
+
+    <div class="highlight-box">
+        <p>
+            ⚠️ Uygulamayı cihazınıza indirerek, kurarak veya oynayarak bu koşulların tamamını kabul etmiş sayılırsınız. Şartları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.
+        </p>
+    </div>
+
+    <h2>1. Lisans ve Kullanım Hakkı</h2>
+    <p>
+        Bu Şartlara bağlı kaldığınız sürece AiakCore, Uygulamayı kişisel ve ticari olmayan eğlence amaçlı kullanımınız için geri alınabilir, münhasır olmayan, devredilemez ve sınırlı bir lisans vermektedir.
+    </p>
+    <ul>
+        <li>Uygulamayı, kaynak kodlarını, görsellerini, seslerini veya bölümlerini izinsiz olarak kopyalayamaz, satamaz, kiralayamaz veya dağıtamazsınız.</li>
+        <li>Tersine mühendislik (reverse engineering), dekompile etme veya kod çıkarma girişiminde bulunamazsınız.</li>
+    </ul>
+
+    <h2>2. Fikri Mülkiyet Hakları</h2>
+    <p>
+        Uygulama içerisindeki tüm görsel tasarımlar, 3D modeller, seviye tasarımları, kelime veritabanları, ses efektleri, müzikler, logolar ve yazılım kodları <strong>AiakCore</strong>'un fikri mülkiyetindedir ve telif hakkı yasalarıyla korunmaktadır.
+    </p>
+
+    <h2>3. Oyun İçi Sanal Öğeler ve Elmaslar</h2>
+    <p>
+        Kelime Bulma Oyunu : Gezgin içerisinde oyuncular seviyeleri tamamlayarak, sandıkları açarak veya reklam izleyerek "Elmas" kazanabilirler.
+    </p>
+    <ul>
+        <li><strong>Sanal Varlık:</strong> Oyun içindeki elmaslar ve ipuçları yalnızca oyun deneyimini zenginleştirmek içindir. Hiçbir gerçek parasal değeri yoktur.</li>
+        <li><strong>Devredilemezlik:</strong> Kazanılan elmaslar veya oyun içi haklar üçüncü şahıslara devredilemez, satılamaz veya gerçek paraya dönüştürülemez.</li>
+        <li><strong>Cihaz Sıfırlama:</strong> Oyun verileri yerel cihaz hafızasında tutulduğundan, uygulamanın silinmesi durumunda yedeklenmemiş ilerlemelerin kaybolmasından kullanıcı sorumludur.</li>
+    </ul>
+
+    <h2>4. Kabul Edilebilir Kullanım ve Hile Yasağı</h2>
+    <p>Oyuncularımızın adil ve keyifli bir deneyim yaşaması adına aşağıdaki eylemler kesinlikle yasaktır:</p>
+    <ul>
+        <li>Oyun içi reklamları atlatmak veya haksız elmas kazanmak amacıyla üçüncü taraf hile araçları, modlu APK'lar, bellek düzenleyiciler veya bot yazılımları kullanmak.</li>
+        <li>Cihazın sistem kısıtlamalarını aşarak (root / jailbreak) oyunun güvenlik mekanizmalarına müdahale etmek.</li>
+    </ul>
+
+    <h2>5. Sorumluluğun Sınırlandırılması</h2>
+    <p>
+        Uygulama "olduğu gibi" (AS IS) ve "mevcut olduğu şekilde" sunulmaktadır. AiakCore, uygulamanın kesintisiz veya tamamen hatasız çalışacağını garanti etmez. Yasaların izin verdiği ölçüde AiakCore; veri kaybı, cihaz arızası veya oyun kesintilerinden kaynaklanabilecek dolaylı zararlardan sorumlu tutulamaz.
+    </p>
+
+    <h2>6. İnternet ve Operatör Ücretleri</h2>
+    <p>
+        Ödüllü reklamların izlenmesi ve bazı oyun işlevleri için aktif internet bağlantısı gerekebilir. Mobil veri kullanımınızdan doğabilecek operatör veya dolaşım (roaming) ücretlerinden tamamen siz sorumlusunuz.
+    </p>
+
+    <h2>7. Sözleşme Değişiklikleri</h2>
+    <p>
+        AiakCore, bu kullanım koşullarını dilediği zaman güncelleme hakkını saklı tutar. Değişiklikler bu web sayfasında yayınlandığı andan itibaren geçerli olur. Uygulamayı kullanmaya devam etmeniz, güncel koşulları kabul ettiğiniz anlamına gelir.
+    </p>
+
+    <div class="contact-card">
+        <p><strong>İletişim:</strong></p>
+        <p>Kullanım koşullarıyla ilgili her türlü soru, öneri veya telif hakkı bildirimleriniz için bize ulaşabilirsiniz:</p>
+        <p style="margin-top: 8px;">
+            📧 E-Posta: <a href="mailto:veloragamespuzzle@gmail.com">veloragamespuzzle@gmail.com</a><br>
+            🏢 Geliştirici: <strong>AiakCore</strong>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2026 AiakCore - Kelime Bulma Oyunu : Gezgin. Tüm Hakları Saklıdır.
+    </div>
+</div>
+
 </body>
 </html>
