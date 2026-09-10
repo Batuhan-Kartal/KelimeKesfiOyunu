@@ -3,145 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - Kelime Keşfi Oyunu</title>
+    <title>Gizlilik Politikası - Kelime Bulma Oyunu : Gezgin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --bg: #f8fafd;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --accent: #059669;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
         }
+
         .container {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border);
         }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 32px;
+            margin-bottom: 36px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-family: 'Outfit', sans-serif;
+        }
+
         h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            color: #111827;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
         h2 {
-            color: #34495e;
-            margin-top: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: #1e293b;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
         ul {
-            padding-left: 20px;
+            margin-bottom: 20px;
+            padding-left: 24px;
+            color: var(--text-muted);
         }
+
         li {
             margin-bottom: 8px;
         }
-        footer {
-            margin-top: 40px;
-            font-size: 0.85em;
-            color: #7f8c8d;
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #166534;
+            font-weight: 500;
+        }
+
+        .sdk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .sdk-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+        }
+
+        .sdk-card strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .sdk-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .sdk-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            border-top: 1px solid #ecf0f1;
-            padding-top: 20px;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .contact-card {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .contact-card p {
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .contact-card a {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 12px;
+            }
+            .container {
+                padding: 24px 18px;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+<div class="container">
+    <div class="header">
+        <span class="badge">AiakCore Gizlilik Sözleşmesi</span>
         <h1>Gizlilik Politikası</h1>
-        <p>Bu gizlilik politikası, AiakCore tarafından işletilen ilgili tüm hizmetlerle birlikte mobil cihazlar için <strong>Kelime Keşfi Oyunu</strong> uygulaması için geçerlidir (topluca "Uygulama"). AiakCore burada "Hizmet Sağlayıcı" olarak anılmaktadır.</p>
-
-        <h2>Bilgi Toplama ve Kullanımı</h2>
-        <p>Uygulama, indirildiğinde ve kullanıldığında bilgi toplar. Bu bilgiler şunları içerebilir:</p>
-        <ul>
-            <li>Cihazınızın İnternet Protokolü (IP) adresi</li>
-            <li>Ziyaret ettiğiniz uygulama sayfaları, ziyaretinizin tarihi ve saati, bu sayfalarda geçirdiğiniz süre</li>
-            <li>Başvuru üzerinde geçirilen süre</li>
-            <li>Kullandığınız mobil işletim sistemi</li>
-        </ul>
-
-        <h2>Çerezler ve İzleme Teknolojileri</h2>
-        <p>Uygulama veya üçüncü taraf SDK'ları, işlevselliği, analizi veya hizmet sunumunu desteklemek için çerezler, SDK'lar, pikseller ve benzer teknolojiler kullanabilir. Geçerli yasa gerektirdiği durumlarda, Hizmet Sağlayıcı, gerekli olmayan izleme teknolojilerini kullanmadan önce onay alacaktır.</p>
-
-        <h2>Konum Bilgileri</h2>
-        <p>Bu uygulama, konum tabanlı özellikler sağlamak, uygulamayı geliştirmek ve ilgili hizmetleri desteklemek amacıyla cihazınızın konumunu toplar.</p>
-        <ul>
-            <li><strong>Konum Belirleme Hizmetleri:</strong> Hizmet Sağlayıcı, konum tabanlı özellikler veya içerik sağlamak için konum verilerini kullanabilir.</li>
-            <li><strong>Analiz ve İyileştirmeler:</strong> Toplu konum verileri, Servis Sağlayıcının kullanım kalıplarını anlamasına ve performansı iyileştirmesine yardımcı olabilir.</li>
-            <li><strong>Üçüncü Taraf Hizmetleri:</strong> Konum verileri, bu gizlilik politikasına ve geçerli yasalara tabi olarak, Uygulama işlevselliğini desteklemek için kullanılan üçüncü taraf hizmetleriyle paylaşılabilir.</li>
-        </ul>
-
-        <h2>Haklarınız</h2>
-        <p>Hizmet Sağlayıcı tarafından tutulan kişisel verilerinize erişim, düzeltme veya silme talebinde bulunabilirsiniz. Bu haklarınızı kullanmak veya işlemenin rızaya dayalı olduğu durumlarda rızanızı geri çekmek için <strong>veloragamespuzzle@gmail.com</strong> adresinden Hizmet Sağlayıcı ile iletişime geçin.</p>
-
-        <h2>Kaliforniya Gizlilik Haklarınız (CCPA/CPRA)</h2>
-        <p>Eğer Kaliforniya'da ikamet ediyorsanız, hangi kişisel bilgilerin toplandığını bilme hakkına, kişisel bilgilerinizi silme hakkına, kişisel bilgilerinizin satışını veya paylaşımını reddetme hakkına ve bu haklarınızı kullanmanız nedeniyle ayrımcılığa uğramama hakkına sahipsiniz. CCPA/CPRA haklarınızı kullanmak için, <strong>veloragamespuzzle@gmail.com</strong> adresinden Hizmet Sağlayıcı ile iletişime geçin.</p>
-
-        <h2>Yapay Zeka</h2>
-        <p>Uygulama, kullanıcı deneyimini geliştirmek ve belirli özellikler sağlamak için Yapay Zeka (YZ) teknolojilerini kullanmaktadır. YZ bileşenleri, kişiselleştirilmiş içerik, öneriler veya otomatik işlevler sunmak için kullanıcı verilerini işleyebilir. Tüm YZ işlemleri, bu gizlilik politikasına ve geçerli yasalara uygun olarak gerçekleştirilir. YZ özellikleri veya veri işleme hakkında sorularınız varsa, lütfen Hizmet Sağlayıcı ile iletişime geçin.</p>
-        <p>Hizmet sağlayıcı, sağladığınız bilgileri önemli bilgiler, gerekli bildirimler ve yasalarca izin verilen durumlarda pazarlama iletişimleri göndermek için kullanabilir.</p>
-        <p>Uygulamayı kullanırken daha iyi bir deneyim sağlamak için, Hizmet Sağlayıcı, <strong>bthnkrtl24@gmail.com</strong> dahil ancak bunlarla sınırlı olmamak üzere belirli kişisel olarak tanımlanabilir bilgileri sağlamanızı isteyebilir. Hizmet Sağlayıcının talep ettiği bilgiler, bu gizlilik politikasında açıklandığı şekilde saklanacak ve kullanılacaktır.</p>
-
-        <h2>Üçüncü Taraf Erişimi</h2>
-        <p>Yalnızca toplu ve anonimleştirilmiş veriler, Hizmet Sağlayıcının Uygulamayı ve hizmetlerini geliştirmesine yardımcı olmak amacıyla periyodik olarak harici hizmetlere iletilir. Hizmet Sağlayıcı, bilgilerinizi bu gizlilik bildiriminde açıklanan şekillerde üçüncü taraflarla paylaşabilir.</p>
-        <p>Lütfen, uygulamanın veri işleme konusunda kendi gizlilik politikalarına sahip üçüncü taraf hizmetlerini kullandığını unutmayın. Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcılarının gizlilik politikalarına ait bağlantılar aşağıdadır:</p>
-        <ul>
-            <li>Google Play Hizmetleri</li>
-            <li>AdMob</li>
-            <li>Firebase için Google Analytics</li>
-            <li>Firebase Crashlytics</li>
-            <li>Unity</li>
-            <li>RevenueCat</li>
-        </ul>
-
-        <h2>Uluslararası Veri Transferleri</h2>
-        <p>Hizmet Sağlayıcı veya üçüncü taraf hizmet sağlayıcıları, kişisel verileri ikamet ettiğiniz ülke dışındaki ülkelere, Avrupa Ekonomik Alanı (AEA) dışındaki ülkeler de dahil olmak üzere aktarabilir. Geçerli yasa uluslararası aktarımlar için güvenceler gerektiriyorsa, Hizmet Sağlayıcı uygun mekanizmaları kullanacaktır:</p>
-        <ul>
-            <li>Avrupa Komisyonu tarafından onaylanan Standart Sözleşme Maddeleri (SCC'ler)</li>
-            <li>Yeterlilik kararları veya diğer yasal olarak tanınan transfer mekanizmaları</li>
-            <li>Gerekli ve yasal olarak izin verilen durumlarda sizin onayınız</li>
-        </ul>
-        <p>Diğer ülkelerdeki veri koruma yasaları, sizin yargı bölgenizdeki yasalardan farklı olabilir. Yasa gerektirdiği durumlarda, Hizmet Sağlayıcı uygun güvenlik önlemlerini uygulayacak ve veri aktarımı için gerekli olan tüm onayları alacaktır.</p>
-
-        <h2>İfşa Durumları</h2>
-        <p>Hizmet Sağlayıcı, Kullanıcı Tarafından Sağlanan ve Otomatik Olarak Toplanan Bilgileri şu durumlarda açıklayabilir:</p>
-        <ul>
-            <li>Kanunen gerekli olduğu durumlarda, örneğin mahkeme celbine veya benzeri yasal süreçlere uymak için;</li>
-            <li>Haklarını korumak, sizin veya başkalarının güvenliğini sağlamak, dolandırıcılığı araştırmak veya bir devlet talebine yanıt vermek için ifşa etmenin gerekli olduğuna iyi niyetle inandıklarında;</li>
-            <li>Kendi adlarına çalışan, güvendikleri hizmet sağlayıcılarıyla işbirliği yaparlar, Hizmet Sağlayıcının kendilerine açıkladığı bilgileri bağımsız olarak kullanmazlar ve bu gizlilik bildiriminde belirtilen kurallara uymayı kabul etmişlerdir.</li>
-        </ul>
-
-        <h2>Vazgeçme Hakları</h2>
-        <p>Uygulamayı kaldırarak mobil cihazınızdan daha fazla bilgi toplanmasını durdurabilirsiniz. Kaldırma işlemi, uygulamanın cihazınızdan veri toplamasını durduracaktır, ancak Servis Sağlayıcıya veya üçüncü taraflara zaten iletilmiş olan bilgileri otomatik olarak silmez.</p>
-        <p>Kişisel verilerinizin silinmesini talep etmek, onayınızı geri çekmek veya haklarınızdan herhangi birini kullanmak için lütfen <strong>veloragamespuzzle@gmail.com</strong> adresinden Hizmet Sağlayıcı ile iletişime geçin.</p>
-
-        <h2>Veri Saklama Politikası</h2>
-        <p>Hizmet sağlayıcı, kişisel verileri belirtilen amaçlar için gerekli olduğu ölçüde saklar:</p>
-        <ul>
-            <li><strong>Kullanıcı Tarafından Sağlanan Veriler:</strong> Uygulamayı kullandığınız süre boyunca ve sonrasında 12 ay daha saklanır; ancak kanunen daha uzun süre saklanması gerekiyorsa bu süre uzayabilir.</li>
-            <li><strong>Otomatik Olarak Toplanan Veriler:</strong> Yasal uyumluluk için daha uzun süre saklanması gerekmedikçe, toplandığı tarihten itibaren en fazla 24 ay süreyle saklanır.</li>
-            <li><strong>Toplu ve Anonimleştirilmiş Veriler:</strong> Sizi artık tanımlamadığı için süresiz olarak saklanır.</li>
-            <li><strong>Yasal Uyumluluk İçin Gerekli Veriler:</strong> İlgili yasa gerektirdiği sürece saklanır.</li>
-        </ul>
-
-        <h2>Çocuklar</h2>
-        <p>Bu uygulama 18 yaşın altındaki çocuklar veya ilgili yasanın gerektirdiği daha yüksek yaş sınırının altındaki çocuklar için tasarlanmamıştır. Hizmet Sağlayıcı, çocuklardan bilerek veri toplamaz veya uygulamayı onlara pazarlamaz.</p>
-        <p>Geçerli yasa gereği ebeveyn veya vasi izni gerekiyorsa, Uygulama bu izin olmadan kullanılmak üzere tasarlanmamıştır. Hizmet Sağlayıcı, geçerli yasayı ihlal ederek 18 yaşın altındaki çocuklardan bilerek kişisel olarak tanımlanabilir bilgiler toplamaz. Hizmet Sağlayıcı, bir çocuğun kişisel bilgiler verdiğini tespit ederse, bu bilgileri sunucularından derhal siler. Eğer bir ebeveyn veya vasiyseniz ve çocuğunuzun Hizmet Sağlayıcıya kişisel bilgiler verdiğinin farkındaysanız, lütfen gerekli işlemleri yapabilmeleri için Hizmet Sağlayıcı ile iletişime geçin (<strong>veloragamespuzzle@gmail.com</strong>).</p>
-
-        <h2>Güvenlik ve Veri İhlali</h2>
-        <p>Hizmet Sağlayıcı, bilgilerinizin gizliliğini korumaya önem vermektedir. Hizmet Sağlayıcı, işlediği ve sakladığı bilgileri korumak için fiziksel, elektronik ve prosedürel güvenlik önlemleri uygulamaktadır.</p>
-        <p>Kişisel verilerinizi etkileyen bir veri ihlali meydana gelirse, Hizmet Sağlayıcı, geçerli yasal gerekliliklere uygun olarak sizi bilgilendirecektir; bu bilgilendirme, gerektiğinde ihlalin niteliği ve ihlali gidermek için atılan adımlar hakkında bilgi vermeyi de içerecektir.</p>
-
-        <h2>Değişiklikler ve Onay</h2>
-        <p>Hizmet Sağlayıcı bu Gizlilik Politikasını zaman zaman güncelleyebilir. Hizmet Sağlayıcı, güncellenmiş Gizlilik Politikasını yürürlük tarihiyle birlikte yayınlayarak önemli değişiklikleri size bildirecektir. Kanunen gerekli olduğu durumlarda, Hizmet Sağlayıcı önemli değişikliklerin yürürlüğe girmesinden önce sizin onayınızı isteyecektir.</p>
-        <p>İşleme, rıza esasına dayanıyorsa, ilgili özellik veya eyleme açıkça onay vererek bu rızayı sağlamış olursunuz. Rızanızı istediğiniz zaman geri çekebilirsiniz.</p>
-
-        <h2>Bize Ulaşın</h2>
-        <p>Uygulamayı kullanırken gizlilikle ilgili herhangi bir sorunuz varsa veya uygulamalar hakkında sorularınız varsa, lütfen <strong>veloragamespuzzle@gmail.com</strong> adresinden Hizmet Sağlayıcı ile iletişime geçin.</p>
-
-        <footer>
-            Bu gizlilik politikası 02.07.2026 tarihinden itibaren geçerlidir.<br>
-            Uygulama Gizlilik Politikası Oluşturucu tarafından oluşturulmuştur.
-        </footer>
+        <div class="subtitle"><strong>Kelime Bulma Oyunu : Gezgin</strong> Mobil Uygulaması</div>
+        <div class="last-updated">Son Güncelleme: 10 Eylül 2026</div>
     </div>
+
+    <p>
+        Bu Gizlilik Politikası, <strong>AiakCore</strong> ("Geliştirici", "Hizmet Sağlayıcı", "biz" veya "bize") tarafından geliştirilen ve Google Play Store üzerinden sunulan <strong>Kelime Bulma Oyunu : Gezgin</strong> mobil uygulaması ("Uygulama") için geçerlidir.
+    </p>
+
+    <div class="highlight-box">
+        <p>
+            🔒 Gizliliğiniz bizim için son derece önemlidir. Kelime Bulma Oyunu : Gezgin uygulaması, doğrudan kişisel kimlik bilgilerinizi (adınız, T.C. kimlik numaranız, telefon numaranız vb.) saklamaz veya sunucularına aktarmaz.
+        </p>
+    </div>
+
+    <h2>1. Toplanan Bilgiler ve Kullanım Amaçları</h2>
+    <p>Uygulamamızı indirip kullandığınızda, oyunun sağlıklı bir şekilde çalışabilmesi ve hizmet kalitesinin artırılması için aşağıdaki anonim teknik veriler otomatik olarak işlenebilir:</p>
+    <ul>
+        <li><strong>Cihaz ve Donanım Bilgileri:</strong> Cihaz modeli, işletim sistemi sürümü (Android), ekran çözünürlüğü ve donanım özellikleri (performans optimizasyonu ve 120Hz ekran desteği için).</li>
+        <li><strong>Oyun İçi İlerleme Verileri:</strong> Tamamlanan seviyeler, bulunan ekstra kelimeler, kazanılan elmaslar ve oyun ayarları. Bu veriler tamamen cihazınızda yerel (PlayerPrefs) olarak saklanır.</li>
+        <li><strong>Performans ve Çökme Raporları:</strong> Olası hata, çökme veya takılmaların tespit edilip düzeltilmesi amacıyla anonim sistem logları.</li>
+    </ul>
+
+    <h2>2. Çerezler ve Üçüncü Taraf Hizmetleri (SDK'lar)</h2>
+    <p>
+        Uygulamamız, oyun motoru altyapısını sağlamak ve reklam gösterimlerini yönetmek için güvenilir üçüncü taraf hizmet sağlayıcılarının kütüphanelerini (SDK) kullanmaktadır. Bu hizmetler kendi gizlilik politikalarına tabidir:
+    </p>
+
+    <div class="sdk-grid">
+        <div class="sdk-card">
+            <strong>Google AdMob</strong>
+            <p>Ödüllü reklamlar (elmas kazanma) ve ara reklam gösterimleri için reklam kimliği (AAID) işleyebilir.</p>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası →</a>
+        </div>
+        <div class="sdk-card">
+            <strong>Google Play Oyun Hizmetleri</strong>
+            <p>Oturum açma, başarımlar ve bulut kayıt altyapısı.</p>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Play Hizmetleri Politikası →</a>
+        </div>
+        <div class="sdk-card">
+            <strong>Unity Technologies</strong>
+            <p>Oyun motoru çalışma zamanı performansı ve cihaz uyumluluk tespiti.</p>
+            <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Gizlilik Politikası →</a>
+        </div>
+    </div>
+
+    <h2>3. Reklamlar ve Veri Güvenliği</h2>
+    <p>
+        Oyunumuz, ücretsiz oyun deneyimini sürdürebilmek için Google AdMob onaylı reklam ağlarını kullanmaktadır. Oyuncularımız dilediklerinde mağaza içerisinden reklam izleyerek ücretsiz elmas kazanabilirler. Reklam sağlayıcıları, ilgi alanlarınıza uygun kişiselleştirilmiş veya kişiselleştirilmemiş reklamlar sunabilmek için cihazınızın anonim reklam tanımlayıcısını (Google Advertising ID) kullanabilir.
+    </p>
+    <p>
+        Cihazınızın Ayarlar menüsünden <em>Google > Reklamlar</em> bölümüne giderek dilediğiniz zaman kişiselleştirilmiş reklamları sıfırlayabilir veya devre dışı bırakabilirsiniz.
+    </p>
+
+    <h2>4. Çocukların Gizliliği (COPPA ve Google Play Aile Politikası)</h2>
+    <p>
+        Kelime Bulma Oyunu : Gezgin, her yaştan zihin egzersizi ve kelime oyunu severler için tasarlanmıştır. Uygulamamız 13 (veya ilgili yasalardaki sınır olan 18) yaşın altındaki çocuklardan bilerek kişisel kimlik verisi <strong>toplamaz</strong>. Uygulama içerisindeki reklamlar, Google Play Aile Politikası yönergelerine uygun şekilde yaşa duyarlı filtrelere tabi tutulmaktadır.
+    </p>
+    <p>
+        Bir ebeveyn veya vasi olarak çocuğunuzun bize kişisel bilgi verdiğini düşünüyorsanız, lütfen derhal bizimle iletişime geçin. Bu tür bilgiler anında sistemlerimizden silinecektir.
+    </p>
+
+    <h2>5. Veri Saklama ve Silme Hakları (KVKK / GDPR / CCPA)</h2>
+    <p>
+        Oyun verileriniz (seviye ilerlemesi, elmas miktarı) tamamen cihazınızda saklanmaktadır. Uygulamayı cihazınızdan sildiğinizde veya uygulama verilerini temizlediğinizde tüm yerel kayıtlar cihazınızdan kalıcı olarak silinir.
+    </p>
+    <p>
+        Kişisel verilerinizle ilgili haklarınızı kullanmak, herhangi bir soru sormak veya veri silme talebinde bulunmak için bizimle e-posta yoluyla iletişime geçebilirsiniz.
+    </p>
+
+    <h2>6. Değişiklikler</h2>
+    <p>
+        Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Yapılan tüm güncellemeler bu sayfada yayınlanacak ve yürürlük tarihi güncellenecektir. Değişikliklerden haberdar olmak için bu sayfayı düzenli aralıklarla incelemeniz tavsiye edilir.
+    </p>
+
+    <div class="contact-card">
+        <p><strong>İletişim ve Destek:</strong></p>
+        <p>Gizlilik politikamız veya oyunumuzla ilgili her türlü soru, öneri ve destek talebiniz için bize ulaşabilirsiniz:</p>
+        <p style="margin-top: 8px;">
+            📧 E-Posta: <a href="mailto:veloragamespuzzle@gmail.com">veloragamespuzzle@gmail.com</a><br>
+            🏢 Geliştirici: <strong>AiakCore</strong>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2026 AiakCore - Kelime Bulma Oyunu : Gezgin. Tüm Hakları Saklıdır.
+    </div>
+</div>
+
 </body>
 </html>
